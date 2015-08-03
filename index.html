@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=1920"/>
+    <title>Tizen Content API</title>
+    <script src="./mediaBrowser.js"></script>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<h1>Tizen Content API</h1>
+<div class="left">
+    <h2>Available buttons/actions:</h2>
+
+    <div>
+        0 - Clear filter<br>
+        1 - Filter images only<br>
+        2 - Filter .apk files only<br>
+        ENTER - change content's rating
+    </div>
+
+    <h2>Content browser</h2>
+
+    <div id="filter">
+        Filter: <span id="filter-name">none</span>
+    </div>
+    <div id="browser"></div>
+</div>
+
+<div class="right">
+    <h2>Info</h2>
+
+    <p>This application demonstrates the use of content API to browse multimedia available on the device</p>
+
+    <h2>Content Information</h2>
+
+    <img id="thumb" src=""/>
+
+    <p>Rating: <span id="rating"></span></p>
+
+    <p>
+        Description: <br/>
+        <span id="description"></span>
+    </p>
+
+    <h2>Message</h2>
+
+    <p id="message">
+
+    </p>
+</div>
+
+</body>
+</html>
