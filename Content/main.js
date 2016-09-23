@@ -202,6 +202,11 @@
      * @type {Function}
      */
     function changeRating() {
+
+        if(files === undefined) {
+            return;
+        }
+
         // Get currently focused item
         var currentItemIndex = mediaBrowser.getCurrentItemIndex();
         
