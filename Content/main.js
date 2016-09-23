@@ -120,14 +120,17 @@
      * @type {Function}
      */
     function onLoadSuccess(items) {
-        // render items in media browser
-        mediaBrowser.setItems(items);
+    	
+    	if(items.length != 0) {
+            // render items in media browser
+            mediaBrowser.setItems(items);
 
-        // caches the list
-        files = items;
+            // caches the list
+            files = items;
 
-        // update the info panel
-        updateInfoPanel();
+            // update the info panel
+            updateInfoPanel();    		
+    	}
     }
 
 
@@ -154,6 +157,7 @@
         var directoryId = null;
 
         // Find all files matching the filter
+        // onLoadSuccess로 불리면 안되는것으로 보임.
         tizen.content.find(onLoadSuccess, onLoadError, directoryId, filter);
     }
 
@@ -171,13 +175,24 @@
         // Find all files matching the filter
         tizen.content.find(onLoadSuccess, onLoadError, directoryId, filter);
     }
+    
+
+    function errorCB(err) {
+        console.log( 'The following error occurred: ' +  err.name);
+    }
+    function printDirectory(directory, index, directories) {
+        console.log('directoryURI: ' + directory.directoryURI + ' Title: ' + directory.title);
+    }
+    function getDirectoriesCB(directories) {
+        directories.forEach(printDirectory);
+    }
 
     /**
      * Loads all available files on the device
      * Without filtering
      * @type {Function}
      */
-    function loadAllItems() {
+    function loadAllItems() {    	
         // find all available files
         tizen.content.find(onLoadSuccess, onLoadError);
     }
@@ -189,6 +204,7 @@
     function changeRating() {
         // Get currently focused item
         var currentItemIndex = mediaBrowser.getCurrentItemIndex();
+        
         // Get file
         var file = files[currentItemIndex];
 
@@ -243,8 +259,6 @@
         registerKeys();
         registerKeyHandler();
         registerContentChangeHandlers();
-
-
 
         // Add some initial data on beginning
         loadAllItems();

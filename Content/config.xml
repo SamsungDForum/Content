@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns:tizen="http://tizen.org/ns/widgets"
-        xmlns="http://www.w3.org/ns/widgets"
-        id="http://yourdomain/Content"
-        version="1.1.0"
-        viewmodes="maximized">
-    <tizen:application id="demoapp005.Content"
-                       package="demoapp005"
-                       required_version="2.3"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/Content" version="1.1.0" viewmodes="maximized">
+    <tizen:application id="demoapp005.Content" package="demoapp005" required_version="2.3"/>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
     <icon src="icon.png"/>
@@ -15,5 +9,4 @@
     <tizen:privilege name="http://tizen.org/privilege/content.write"/>
     <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
     <tizen:profile name="tv"/>
-    <tizen:setting background-support="enable" />
 </widget>
